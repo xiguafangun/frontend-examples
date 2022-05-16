@@ -1,0 +1,20 @@
+<img src="./诸葛亮.jpg" class="img preview" />
+<img src="./进击.jpg" class="img" />
+<img src="./进击-大.jpg" class="img preview" />
+
+<!-- 按需引入 -->
+<script src="./preview/preview.js"></script>
+<link rel="stylesheet" href="./preview/style.css" />
+
+<style>
+    .img {
+        width: 200px;
+        height: 200px;
+
+        border: 1px solid black;
+
+        /* 知识点：图像适应模式 */
+        /* 课件链接：https://3yya.com/courseware/chapter/99#图像适应模式 */
+        object-fit: contain; /* 图片完全展示，保持宽度比 */
+    }
+</style>

@@ -1,0 +1,40 @@
+.preview {
+    cursor: pointer;
+}
+
+/* 预览器样式 */
+.preview-container {
+    /* 知识点：fixed 定位 */
+    /* 课件链接：https://3yya.com/courseware/chapter/106#fixed */
+    /* 脱离正常文档流，并占满整个屏幕 */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    /* 知识点：rgba 单位 */
+    /* 课件链接：https://3yya.com/courseware/chapter/115#RGBA */
+    background-color: rgba(0, 0, 0, 0.6); /* 黑色，不透明度 0.6 */
+
+    /* 知识点：flex 布局 */
+    /* 课件链接：https://3yya.com/courseware/chapter/72 */
+    /* 子元素水平上下居中 */
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+
+    /* 小手 */
+    cursor: pointer;
+}
+
+/* 预览器内图片 */
+.preview-container .image {
+    max-width: 90%;
+    max-height: 90%;
+
+    min-width: 50px;
+    min-height: 50px;
+
+    object-fit: contain;
+}
