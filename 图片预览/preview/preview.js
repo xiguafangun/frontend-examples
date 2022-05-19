@@ -23,6 +23,10 @@ for (let img of document.querySelectorAll(".preview")) {
 
         // 绑定滚动事件
         container.onwheel = function (event) {
+            // 在页面有滚动条的情况下
+            // 防止页面滚动
+            event.preventDefault()
+
             // 知识点：获取元素样式属性值
             // 课件链接：https://3yya.com/courseware/chapter/160#获取样式的值
             const width = getComputedStyle(innerImg).width.slice(0, -2) // 获取当前图片宽度
