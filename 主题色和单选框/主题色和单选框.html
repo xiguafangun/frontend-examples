@@ -1,0 +1,141 @@
+<body class="light-theme">
+    <div class="options">
+        <label for="light">
+            <input
+                id="light"
+                type="radio"
+                value="light-theme"
+                name="theme"
+                checked
+            />
+            <div>日间主题</div>
+        </label>
+
+        <label for="dark">
+            <input id="dark" type="radio" value="dark-theme" name="theme" />
+            <div>夜间主题</div>
+        </label>
+
+        <label for="pika">
+            <input id="pika" type="radio" value="pika-theme" name="theme" />
+            <div>皮卡丘主题</div>
+        </label>
+    </div>
+    <div class="brand">
+        <h1>三眼鸭编程</h1>
+        <p>帮助每一个学编程的人</p>
+    </div>
+</body>
+
+<script>
+    if (localStorage.theme) {
+        // 如果 localStorage 中存在主题色的值
+
+        // 设置 body 主题色
+        document.body.className = localStorage.theme
+
+        // 选中对应主题色单选框
+        document.querySelector(
+            `.options input[name=theme][value=${localStorage.theme}]`
+        ).checked = true
+    }
+
+    document
+        .querySelectorAll(".options input[name=theme]")
+        .forEach(function (radio) {
+            radio.onchange = function () {
+                // 设置主题色
+                document.body.className = radio.value
+
+                // 保存至 localStorage
+                localStorage.theme = radio.value
+            }
+        })
+
+    function changeTheme() {
+        alert(event.target.value)
+    }
+</script>
+<style>
+    /* 日间主题 */
+    .light-theme {
+        /* 页面的文本色 */
+        --text-color: #333;
+        /* 页面的背景色 */
+        --back-color: white;
+        /* brand 的背景色 */
+        --brand-color: #eee;
+    }
+
+    /* 夜间主题 */
+    .dark-theme {
+        --text-color: white;
+        --back-color: #333;
+        --brand-color: black;
+    }
+
+    /* 皮卡丘主题 */
+    .pika-theme {
+        --text-color: black;
+        --back-color: #fed643;
+        --brand-color: #fc272b;
+    }
+
+    body {
+        display: flex;
+        /* 竖向排列 */
+        flex-direction: column;
+        /* 水平垂直居中 */
+        align-items: center;
+        justify-content: center;
+
+        /* 平滑过渡 */
+        transition: all 1s;
+
+        /* 应用变量文本色 */
+        color: var(--text-color);
+        /* 应用变量背景色 */
+        background-color: var(--back-color);
+    }
+
+    .options {
+        /* 行内 flex 布局 */
+        display: inline-flex;
+
+        background-color: #eee;
+
+        border-radius: 16px;
+        overflow: hidden;
+
+        color: #333;
+        font-weight: bold;
+    }
+
+    .options label input {
+        /* 隐藏小圆点单选框 */
+        display: none;
+    }
+
+    .options label div {
+        padding: 12px;
+        cursor: pointer;
+    }
+
+    .options label input:checked + div {
+        /* 单选框按钮选中的样式 */
+        background-color: teal;
+        color: white;
+    }
+
+    .brand {
+        margin: 40px 0;
+        padding: 0 40px;
+
+        border-radius: 8px;
+
+        text-align: center;
+
+        /* 应用变量 brand 的背景色 */
+        background-color: var(--brand-color);
+    }
+</style>
