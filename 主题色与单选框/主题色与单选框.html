@@ -25,6 +25,7 @@
         <h1>三眼鸭编程</h1>
         <p>帮助每一个学编程的人</p>
     </div>
+    <img class="logo" src="https://3yya.com/logo.png" alt="logo" />
 </body>
 
 <script>
@@ -51,10 +52,6 @@
                 localStorage.theme = radio.value
             }
         })
-
-    function changeTheme() {
-        alert(event.target.value)
-    }
 </script>
 <style>
     /* 日间主题 */
@@ -82,22 +79,23 @@
     }
 
     body {
+        margin: 0;
         height: 100%;
 
         display: flex;
         /* 竖向排列 */
         flex-direction: column;
-        /* 水平垂直居中 */
+        /* 水平居中 */
         align-items: center;
-        justify-content: center;
 
-        /* 平滑过渡 */
-        transition: all 1s;
+        justify-content: center;
 
         /* 应用变量文本色 */
         color: var(--text-color);
         /* 应用变量背景色 */
         background-color: var(--back-color);
+
+        transition: color 1s, background-color 1s;
     }
 
     .options {
@@ -131,7 +129,7 @@
 
     .brand {
         margin: 40px 0;
-        padding: 0 40px;
+        padding: 0 80px;
 
         border-radius: 8px;
 
@@ -139,5 +137,13 @@
 
         /* 应用变量 brand 的背景色 */
         background-color: var(--brand-color);
+
+        /* 因为背景色不会继承 */
+        /* 所以单独设置过渡效果 */
+        transition: background-color 1s;
+    }
+
+    .logo {
+        width: 200px;
     }
 </style>
