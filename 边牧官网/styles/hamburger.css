@@ -1,0 +1,69 @@
+.hamburger ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.hamburger .close {
+    display: block;
+    padding: 20px;
+}
+
+.hamburger ul a {
+    display: block;
+    padding: 10px 20px;
+
+    color: white;
+    text-decoration: none;
+}
+
+.hamburger input {
+    /* 隐藏筛选框 */
+    display: none;
+}
+
+.hamburger .button div {
+    border-radius: 2px;
+
+    width: 30px;
+    height: 4px;
+
+    margin: 5px 0;
+
+    background-color: white;
+}
+
+.hamburger .hamburger-checkbox:checked ~ .overlay {
+    display: block;
+}
+
+.hamburger .hamburger-checkbox:checked ~ .menu {
+    right: 0;
+}
+
+.hamburger .hamburger-checkbox ~ .overlay {
+    display: none;
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    z-index: 100;
+}
+
+.hamburger .hamburger-checkbox ~ .menu {
+    position: fixed;
+
+    right: -50vw;
+    top: 0;
+    bottom: 0;
+
+    width: 50vw;
+
+    background-color: black;
+
+    z-index: 200;
+}
