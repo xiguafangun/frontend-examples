@@ -292,7 +292,15 @@ body {
     margin-bottom: 80px;
 }
 
-@media screen and (max-width: 767px) {
+.hamburger {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
     .navigation .routes {
         display: none;
     }
@@ -316,10 +324,5 @@ body {
 
     .about .intro .detail {
         order: 2;
-    }
-}
-@media screen and (min-width: 768px) {
-    .hamburger {
-        display: none;
     }
 }
