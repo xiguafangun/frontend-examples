@@ -4,8 +4,16 @@
     padding: 0;
 }
 .hamburger .close {
-    display: block;
-    padding: 20px;
+    display: inline-block;
+
+    padding: 10px 20px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.hamburger .close:hover {
+    background-color: var(--primary-color);
 }
 
 .hamburger ul a {
@@ -14,6 +22,10 @@
 
     color: white;
     text-decoration: none;
+}
+
+.hamburger ul a:hover {
+    background-color: var(--primary-color);
 }
 
 .hamburger input {
@@ -53,7 +65,7 @@
     top: 0;
     bottom: 0;
 
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.65);
 
     z-index: 100;
 }
@@ -61,15 +73,15 @@
 .hamburger .hamburger-checkbox ~ .menu {
     position: fixed;
 
-    right: -50vw;
+    right: -200px;
     top: 0;
     bottom: 0;
 
-    width: 50vw;
+    width: 200px;
 
     background-color: black;
 
     z-index: 200;
 
-    transition: all 1s;
+    transition: right 1s;
 }
