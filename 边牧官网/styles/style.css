@@ -161,21 +161,18 @@ body {
     overflow: hidden;
 }
 
-.banner .btn a {
-    display: inline-block;
-
+.banner .btn {
     padding: 10px 40px;
 
     font-size: 18px;
     color: white;
     text-decoration: none;
 
-    /* z-index 只对除 static 以外的生效 */
     position: relative;
-    z-index: 10;
+    z-index: 0;
 }
 
-.banner .btn:before {
+.banner .btn::after {
     content: "";
 
     position: absolute;
@@ -190,11 +187,11 @@ body {
 
     background-color: var(--primary-color);
 
-    z-index: 5;
+    z-index: -1;
     transition: width 500ms;
 }
 
-.banner .btn:hover::before {
+.banner .btn:hover::after {
     width: 100%;
 }
 
@@ -242,6 +239,10 @@ body {
 .adopt .container {
     max-width: 800px;
     margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .adopt .title {
@@ -259,7 +260,8 @@ body {
 }
 
 .adopt .name,
-.adopt .address {
+.adopt .address,
+.phone-email {
     width: 100%;
 }
 
@@ -282,11 +284,12 @@ body {
 
     border-radius: 8px;
 
+    align-self: flex-end;
+
     cursor: pointer;
 }
 
 .adopt .copyright {
-    text-align: center;
     color: white;
     font-weight: bold;
     margin-bottom: 80px;
